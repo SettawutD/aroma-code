@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.top">
+			<block class="Magento\Framework\View\Element\Template" name="slider_group" template="Magento_Cms::slider_group.phtml" />
+        </referenceContainer>
+		
+		<referenceContainer name="main">
+			<block class="Plazathemes\Pricecountdown\Block\Pricecountdown" ifconfig="pricecountdown/general/enabled" before="-" name="pricecountdown" template="saleslider.phtml" />
+			
+			<block class="Magento\Cms\Block\Block" name="category_tap" after="pricecountdown">
+				<arguments>
+					<argument name="block_id" xsi:type="string">category_tab_lavante1</argument>
+				</arguments>
+			</block>
+			
+			<block class="Magento\Framework\View\Element\Template" name="static_middle" template="Magento_Cms::static_middle.phtml" after="category_tap" />
+			
+			<block class="Plazathemes\Bestsellerproduct\Block\Bestsellerproduct" name="bestsellerproduct" after="static_middle" template="bestsellerproduct.phtml" />
+			
+			<block class="Magento\Framework\View\Element\Template" name="static_bottom" template="Magento_Cms::static_bottom.phtml" after="bestsellerproduct" />
+			
+			<block class="Magento\Cms\Block\Block" name="best_cat" after="static_bottom">
+				<arguments>
+					<argument name="block_id" xsi:type="string">best_category_lavante1</argument>
+				</arguments>
+			</block>
+			
+			<block class="Plazathemes\Recentproductslider\Block\Products" name="Recentproductslider" after="best_cat" template="productslider.phtml" />
+			
+			<block class="Plazathemes\Brandslider\Block\Brandslider" name="Brand" after="Recentproductslider" template="brandslider.phtml"  />
+			
+			<block class="Magento\Framework\View\Element\Template" name="module_group" template="Magento_Cms::module_group.phtml" after="Brand"/>
+			
+			<block class="Magento\Framework\View\Element\Template" name="newsletter_group" template="Magento_Cms::newsletter_group.phtml" after="module_group"/>
+			
+			
+		</referenceContainer> 
+    </body>
+</page>

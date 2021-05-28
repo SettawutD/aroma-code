@@ -1,0 +1,14 @@
+<div class="module-group">
+	<div class="container">
+		<div class="container-inner">
+			<div class="row">
+				<div class="col col-md-4 col-sm-12 col-xs-12">
+					<?php echo $this->getLayout()->createBlock('Plazathemes\Testimonial\Block\Testimonial')->setTemplate('testimonial.phtml')->toHtml();?>
+				</div>
+				<div class="col col-md-8 col-sm-12 col-xs-12">
+					<?php echo $this->getLayout()->createBlock('Plazathemes\Blog\Block\Sidebar\Recent')->setTemplate('sidebar/slider.phtml')->toHtml();?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

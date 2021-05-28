@@ -1,0 +1,21 @@
+<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('static_middle_lavante1')->toHtml();?>
+<script type="text/javascript">
+require(["jquery"], function($){
+	
+   $("#static_middle_lavante1").owlCarousel({ 
+		autoPlay : false,
+		slideSpeed : 1000,
+		navigation : true,
+		stopOnHover : true,
+		pagination : false,
+		items : 1,
+		itemsDesktop : [1199,1],
+		itemsDesktopSmall : [991,1],
+		itemsTablet: [767,1],
+		itemsMobile : [479,1],
+		addClassActive : true,
+		scrollPerPage:false
+   });
+   
+});
+</script>  
